@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Bootstrap Admin App + jQuery">
+    <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
+    <title>Hospital Management System</title>
+    <!-- =============== VENDOR STYLES ===============-->
+    <!-- FONT AWESOME-->
+    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
+    <!-- SIMPLE LINE ICONS-->
+    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+    <!-- ANIMATE.CSS-->
+    <link rel="stylesheet" href="vendor/animate.css/animate.min.css">
+    <!-- WHIRL (spinners)-->
+    <link rel="stylesheet" href="vendor/whirl/dist/whirl.css">
+    <link rel="stylesheet" href="vendor/sweetalert/dist/sweetalert.css">
+    <!-- DATATABLES-->
+    <link rel="stylesheet" href="vendor/datatables-colvis/css/dataTables.colVis.css">
+    <link rel="stylesheet" href="vendor/datatables/media/css/dataTables.bootstrap.css">
+    <link rel="stylesheet" href="vendor/dataTables.fontAwesome/index.css">
+    <!-- =============== PAGE VENDOR STYLES ===============-->
+    <!-- =============== BOOTSTRAP STYLES ===============-->
+    <link rel="stylesheet" href="app/css/bootstrap.css" id="bscss">
+    <!-- =============== APP STYLES ===============-->
+    <link rel="stylesheet" href="app/css/app.css" id="maincss">
+</head>
+
+<body class="layout-h">
+    <div class="wrapper">
+        <!-- top navbar-->
+        <header class="topnavbar-wrapper">
+            <!-- START Top Navbar-->
+            <nav role="navigation" class="navbar topnavbar">
+                <!-- START navbar header-->
+                <div class="navbar-header">
+                    <a href="/" class="navbar-brand">
+                        <div class="col-lg-3 brand-logo"><img src="/img/logo-single.png" alt="App Logo" style="width:140px;height:50px;margin-top:-8px;text-align: left;" />
+
+                        </div>
+                        <!--<div class="brand-logo">
+                            Hospital&nbsp;Management&nbsp;System
+                        </div>
+                        <div class="brand-logo-collapsed">
+                            <img src="img/logo-single.png" alt="App Logo" class="img-responsive">
+                        </div>-->
+                    </a>
+                </div>
+                <!-- END navbar header-->
+                <!-- START Nav wrapper-->
+                <div class="nav-wrapper">
+
+                </div>
+                <!-- END Nav wrapper-->
+                <!-- START Search form-->
+                <form role="search" action="search.html" class="navbar-form">
+                    <div class="form-group has-feedback">
+                        <input type="text" placeholder="Type and hit enter ..." class="form-control">
+                        <div data-search-dismiss="" class="fa fa-times form-control-feedback"></div>
+                    </div>
+                    <button type="submit" class="hidden btn btn-default">Submit</button>
+                </form>
+                <!-- END Search form-->
+            </nav>
+            <!-- END Top Navbar-->
+        </header>
+        <!-- sidebar-->
+
+        <!-- offsidebar-->
+
+        <!-- Main section-->
+        <section>
+            <!-- Page content-->
+            <div class="content-wrapper">
+                <div class="content-heading">
+                    <!-- START Language list-->
+
+                    <!-- END Language list    -->
+                    Past and Family History of
+                    <small data-localize="dashboard.WELCOME"></small>
+                    <div class="pull-right">
+                        <div class="btn-group">
+                            <button style="bottom: 27px;margin-right:5px !important" id="addpatient" class="mb-sm btn btn-primary"
+                                type="button">Update Information</button><button style="bottom: 27px;" id="addpatient" class="mb-sm btn btn-primary"
+                                type="button">Add Medical Reports</button>
+                        </div>
+                    </div>
+            </div>
+            <div class="row">
+                <div class="form-group">
+                    <div class="col-lg-1 "><label class="control-label text-right">Patient ID</label></div>
+                    <div class="col-lg-2">
+                        <input required type="text" name="pat_id" class="form-control" placeholder="Patient ID"
+                                readonly>
+                    </div>
+                    <label class="col-lg-2 text-right control-label">Patient Name</label>
+                    <div class="col-lg-3">
+                    <input required type="text" name="pat_first_name" class="form-control" placeholder="First Name"
+                            readonly>
+                </div>
+            </div>
+            </div>
+                <div class="row">
+                    <div class="form-group"></div>
+                </div>
+                <div class="row">
+                    <div class="form-group"></div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-lg-1 control-label">Patient Age</label>
+                        <div class="col-lg-2">
+                            <input required type="text" name="pat_age" class="form-control" placeholder="Patient Age"
+                                readonly>
+                        </div>
+                        <label class="col-lg-2 control-label text-right">Patient Has</label>
+
+                        <div class="col-lg-7">
+                            <input type="checkbox" disabled class="mychkspace" name="pat_bp" id="pat_bp" /><label class="mylblspace"
+                                for="pat_bp" >BP</label>
+                            <input type="checkbox" disabled class="mychkspace" name="pat_diabetes"><label class="mylblspace" for="pat_diabetes" >Diabates</label>
+                            <input type="checkbox" disabled class="mychkspace" name="pat_cancer"><label class="mylblspace" for="pat_cancer" >Cancer</label>
+                        </div>
+
+                        <!--
+                                    <div class="col-lg-2 checkbox"><label><input type="checkbox" name="pat_bp" class="form-control"
+                                        placeholder="Patient BP">BP</label>
+                                </div>
+                                <div class="col-lg-2 checkbox"><label><input type="checkbox" name="pat_diabetes" class="form-control"
+                                        placeholder="Patient Diabetes" >Diabates</label> <br>
+                                </div>
+        
+                                <div class="col-lg-2 checkbox"><label><input type="checkbox" name="pat_cancer" class="form-control" 
+                                        placeholder="Patient Cancer">Cancer</label><br>
+                                </div>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-lg-1 control-label">Father Name</label>
+                        <div class="col-lg-2">
+                            <input required type="text" name="father_name" class="form-control" placeholder="Father Name" readonly>
+                        </div>
+                        <label class="col-lg-1 control-label">Father Age</label>
+                        <div class="col-lg-2">
+                            <input required type="text" name="father_age" class="form-control" placeholder="Father Age" readonly >
+                        </div>
+                        <label class="col-lg-1 control-label">Father Has</label>
+                        <div class="col-lg-5">
+                            <input type="checkbox" disabled class="mychkspace" name="pat_father_bp" id="pat_father_bp" /><label
+                                class="mylblspace" for="pat_father_bp">BP</label>
+                            <input type="checkbox" disabled class="mychkspace" name="pat_father_diabetes"><label class="mylblspace"
+                                for="pat_father_diabetes">Diabates</label>
+                            <input type="checkbox" disabled class="mychkspace" name="pat_father_cancer"><label class="mylblspace"
+                                for="pat_father_cancer">Cancer</label>
+                        </div>
+
+                        <!--<div class="col-lg-2 checkbox"><label><input type="checkbox" name="pat_father_bp" class="form-control" 
+                            placeholder="Fater BP">BP</label><br>
+                        </div>  
+                        <div class="col-lg-1 checkbox"><label><input type="checkbox" name="pat_father_diabetes" class="form-control"        
+                            placeholder="Father Diabetes">Diabetes</label>
+                        </div>
+                        <div class="col-lg-1 checkbox">
+                            <label for="pat_father_cancer">Cancer</label> <input type="checkbox" name="pat_father_cancer"
+                                class="form-control" placeholder="Father Cancer">
+                        </div>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="form-group">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                        <label class="col-lg-1 control-label">Mother Name</label>
+                        <div class="col-lg-2">
+                            <input required type="text" name="mother_name" class="form-control" placeholder="Mother Name" readonly>
+                        </div>
+
+                        <label class="col-lg-1 control-label">Mother Age</label>
+                        <div class="col-lg-2">
+                            <input required type="text" name="mother_age" class="form-control" placeholder="Mother Age" readonly>
+                        </div>
+                        <label class="col-lg-1 control-label">Mother Has</label>
+                        <div class="col-lg-5">
+                            <input type="checkbox" disabled class="mychkspace" name="pat_mother_bp" id="pat_mother_bp" /><label
+                                class="mylblspace" for="pat_mother_bp">BP</label>
+                            <input type="checkbox" disabled class="mychkspace" name="pat_mother_diabetes"><label class="mylblspace"
+                                for="pat_mother_diabetes">Diabates</label>
+                            <input type="checkbox" disabled class="mychkspace" name="pat_mother_cancer"><label class="mylblspace"
+                                for="pat_mother_cancer">Cancer</label>
+                        </div>
+                        <!--<div class="col-lg-1">
+                            <label for="pat_mother_bp">BP</label><input type="checkbox" name="pat_mother_bp" class="form-control"
+                                placeholder="Mother BP">
+                        </div>
+                        <div class="col-lg-1">
+                            <label for="pat_mother_diabetes">Diabates</label> <input type="checkbox" name="pat_mother_diabetes"
+                                class="form-control" placeholder="Mother Diabetes">
+                        </div>
+                        <div class="col-lg-1">
+                            <label for="pat_mother_cancer">Cancer</label> <input type="checkbox" name="pat_mother_cancer"
+                                class="form-control" placeholder="Mother Cancer">
+                        </div>-->
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="form-group">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-offset-0 col-lg-11">
+                        <div class="panel panel-default" style="padding: 15px;">
+
+                            <div class="table-responsive">
+                                <table id="datatable4" class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:78%">Reports</th>
+                                            <th style="width:70%">Date</th>
+                                            <th style="width:15%"></th>
+                                            <th style="width:15%"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Page footer-->
+        <footer>
+            <span>&copy; 2016 - Angle</span>
+        </footer>
+    </div>
+
+    <div id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" data-dismiss="modal" aria-label="Close" class="close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 id="myModalLabel" class="modal-title">Patient's Individual History</h4>
+                </div>
+                <div class="modal-body">
+                    <form data-parsley-validate="" novalidate="" class="form-horizontal" id="detailform">
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Patient's ID</label>
+                                <div class="col-lg-2">
+                                    <input required type="text" name="pat_id" class="form-control" placeholder="Patient ID">
+                                </div>
+
+                                <label class="col-lg-offset-1 col-lg-2 control-label">Patient Name</label>
+                                <div class="col-lg-4">
+                                    <input required type="text" name="pat_first_name" class="form-control" placeholder="First Name">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Patient Age</label>
+                                <div class="col-lg-2">
+                                    <input required type="text" name="pat_age" class="form-control" placeholder="Patient Age">
+                                </div>
+
+                                <label class="col-lg-offset-1 col-lg-2 control-label">Phone Number</label>
+                                <div class="col-lg-4">
+                                    <input required type="text" name="pat_ph_no" class="form-control" placeholder="Phone Number">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Patient Has</label>
+                                <div class="col-lg-7">
+                                    <input type="checkbox" class="mychkspace" name="pat_bp" id="pat_bp" /><label class="mylblspace"
+                                        for="pat_bp">BP</label>
+                                    <input type="checkbox" class="mychkspace" name="pat_diabetes"><label class="mylblspace"
+                                        for="pat_diabetes">Diabates</label>
+                                    <input type="checkbox" class="mychkspace" name="pat_cancer"><label class="mylblspace"
+                                        for="pat_cancer">Cancer</label>
+                                </div>
+                                <!--<div class="col-lg-3">
+                                    <label for="pat_bp1">BP</label><input type="checkbox" name="pat_bp" class="form-control"
+                                        placeholder="Patient BP">
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="pat_diabetes1">Diabates</label> <input type="checkbox" name="pat_diabetes"
+                                        class="form-control" placeholder="Patient Diabetes">
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="pat_cancer1">Cancer</label> <input type="checkbox" name="pat_cancer"
+                                        class="form-control" placeholder="Patient Cancer">
+                                </div>-->
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label text-align:left">Father Name</label>
+                                <div class="col-lg-4">
+                                    <input required type="text" name="pat_father" class="form-control" placeholder="Father Name">
+                                </div>
+
+                                <label class="col-lg-2 control-label">Father Age</label>
+                                <div class="col-lg-2">
+                                    <input required type="text" name="pat_father_age" class="form-control" placeholder="Father Age">
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Father Has</label>
+                                <div class="col-lg-5">
+                                    <input type="checkbox" class="mychkspace" name="pat_father_bp" id="pat_father_bp" /><label
+                                        class="mylblspace" for="pat_father_bp">BP</label>
+                                    <input type="checkbox" class="mychkspace" name="pat_father_diabetes"><label class="mylblspace"
+                                        for="pat_father_diabetes">Diabates</label>
+                                    <input type="checkbox" class="mychkspace" name="pat_father_cancer"><label class="mylblspace"
+                                        for="pat_father_cancer">Cancer</label>
+                                </div>
+                                <!--<div class="col-lg-3">
+                                    <label for="pat_father_bp1">BP</label><input type="checkbox" name="pat_father_bp"
+                                        class="form-control" placeholder="Fater BP">
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="pat_father_diabetes1">Diabates</label> <input type="checkbox" name="pat_father_diabetes"
+                                        class="form-control" placeholder="Fater Diabetes">
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="pat_father_cancer1">Cancer</label> <input type="checkbox" name="pat_father_cancer"
+                                        class="form-control" placeholder="Fater Cancer">
+                                </div>-->
+
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Mother Name</label>
+                                <div class="col-lg-4">
+                                    <input required type="text" name="pat_mother" class="form-control" placeholder="Mother Name">
+                                </div>
+
+                                <label class="col-lg-2 control-label">Mother Age</label>
+                                <div class="col-lg-2">
+                                    <input required type="text" name="pat_mother_age" class="form-control" placeholder="Mother Age">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <div>
+                                    <label class="col-lg-2 control-label">Mother Has</label>
+                                    <div class="col-lg-5">
+                                        <input type="checkbox" class="mychkspace" name="pat_mother_bp" id="pat_mother_bp" /><label
+                                            class="mylblspace" for="pat_mother_bp">BP</label>
+                                        <input type="checkbox" class="mychkspace" name="pat_mother_diabetes"><label
+                                            class="mylblspace" for="pat_mother_diabetes">Diabates</label>
+                                        <input type="checkbox" class="mychkspace" name="pat_mother_cancer"><label class="mylblspace"
+                                            for="pat_mother_cancer">Cancer</label>
+                                    </div>
+                                </div>
+                                <!--<div>
+                                <div class="col-lg-3">
+                                    <label for="pat_mother_bp1">BP</label><input type="checkbox" name="pat_mother_bp"
+                                        class="form-control" placeholder="Mother BP">
+                                </div>
+                            </div>
+                                <div class="col-lg-3">
+                                    <label for="pat_mother_diabetes1">Diabates</label> <input type="checkbox" name="pat_mother_diabetes"
+                                        class="form-control" placeholder="Mother Diabetes">
+                                </div>
+                                <div class="col-lg-3">
+                                    <label for="pat_mother_cancer">Cancer</label> <input type="checkbox" name="pat_mother_cancer"
+                                        class="form-control" placeholder="Mother Cancer">
+                                        <label><input type="checkbox" name="pat_mother_cancer1"
+                                        class="c-checkbox form-control" placeholder="Mother Cancer">Cancer</label> 
+                                </div>-->
+
+                            </div>
+                        </div>
+
+
+                        <!--<div class="row">
+                            <div class="form-group">
+                                <label class="col-lg-2 control-label">Medical Records</label>
+                                <div class="col-lg-8">
+                                    <input required type="file" name="pat_report" class="form-control" placeholder="Patient Report">
+                                </div>
+                            </div>
+                        </div>-->
+
+
+
+
+                        <!--<div class="form-group">
+                              <label class="col-lg-2 control-label">Last name</label>
+                              <div class="col-lg-10">
+                                 <input required type="text" name="pat_last_name" class="form-control" placeholder="Last name">
+                              </div>
+                           </div>
+                   <div class="form-group">
+                              <label class="col-lg-2 control-label">Insurance No</label>
+                              <div class="col-lg-10">
+                                 <input required type="text" name="pat_insurance_no"  class="form-control" placeholder="Insurance No">
+                              </div>
+                           </div>
+                   <div class="form-group">
+                              <label class="col-lg-2 control-label">Phone Number</label>
+                              <div class="col-lg-10">
+                                 <input required name="pat_ph_no" type="text" class="form-control" placeholder="Phone Number">
+                              </div>
+                           </div>
+                   <div class="form-group">
+                              <label class="col-lg-2 control-label">Address</label>
+                              <div class="col-lg-10">
+                                 <textarea required name="pat_address" class="form-control" placeholder="Address"></textarea>
+                              </div>
+                           </div>-->
+
+                    </form>
+
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" data-dismiss="modal" class="btn btn-default">Close</button>
+                    <button id="savethepatient" type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- =============== VENDOR SCRIPTS ===============-->
+    <!-- MODERNIZR-->
+    <script src="vendor/modernizr/modernizr.custom.js"></script>
+    <!-- JQUERY-->
+    <script src="vendor/jquery/dist/jquery.js"></script>
+    <!-- BOOTSTRAP-->
+    <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="vendor/datatables/media/js/jquery.dataTables.min.js"></script>
+    <script src="vendor/datatables-colvis/js/dataTables.colVis.js"></script>
+    <script src="vendor/datatables/media/js/dataTables.bootstrap.js"></script>
+    <script src="vendor/serialize/jquery.serializejson.js"></script>
+    <!-- STORAGE API-->
+    <script src="vendor/jQuery-Storage-API/jquery.storageapi.js"></script>
+    <!-- JQUERY EASING-->
+    <script src="vendor/jquery.easing/js/jquery.easing.js"></script>
+    <!-- ANIMO-->
+    <script src="vendor/animo.js/animo.js"></script>
+    <script src="vendor/parsley/parsley.min.js"></script>
+    <script src="vendor/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- LOCALIZE-->
+    <script src="vendor/jquery-localize-i18n/dist/jquery.localize.js"></script>
+    <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+    <!-- =============== APP SCRIPTS ===============-->
+    <script src="app/js/app.js"></script>
+    <script src="js/individualhistory.js"></script>
+</body>
+
+</html>
